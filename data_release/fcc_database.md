@@ -2,7 +2,7 @@
 
 The core components of the database include a table for submission metadata, a table for attachment metadata, a table for filer metadata, and a table that contains comment text if submitted in express format. In addition to these core tables, there are several derived tables specific to the analyses in the paper, including which submissions and attachments were cited in the final order. The keys fit together as shown in the diagram below.
 
-![image](db_diagram.jpg)
+<img src="db_diagram.jpg" alt="drawing" width="600"/>
 
 ### comments
 plain text comments associated with submissions
