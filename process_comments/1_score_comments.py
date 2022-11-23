@@ -36,10 +36,7 @@ def main():
 
     #Document term matrix for queries
     pickle_in = open("data/pickles/query_dtm.pickle","rb")
-    query_dtm = pickle.load(pickle_in)
-
-    #Convert to csc matrix
-    sp_query_dtm = sparse.csr_matrix(query_dtm.iloc[:, :-1].values)
+    sp_query_dtm = pickle.load(pickle_in)
 
     #Get query selector
     non_zero_entries = sp_query_dtm.nonzero()

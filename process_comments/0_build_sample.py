@@ -35,7 +35,7 @@ def main():
       select
       submission_id || '_' || document_id || '.pdf' as doc_id,
       1 as cited
-      from filers_doc_matched
+      from docs_cited
       group by 1,2
     ),
     cited as(
@@ -44,13 +44,13 @@ def main():
           select
           duplicate_document_id as doc_id, cited
           from cites a
-          inner join doc_duplicates b
+          inner join near_duplicates b
           on a.doc_id = b.target_document_id
           union all
           select
           target_document_id as doc_id, cited
           from cites a
-          inner join doc_duplicates b
+          inner join  b
           on a.doc_id = b.duplicate_document_id
           union all
           select doc_id, cited
@@ -94,7 +94,7 @@ def main():
     on b.filer_name = e.filer_name
     left join interest_groups f
     on a.submission_id = f.submission_id
-    left join exact_pdf_duplicates g
+    left join exact_duplicates g
     on a.submission_id || '_' || a.document_id || '.pdf' = g.duplicate_document_id
     where a.file_extension in ('pdf', 'txt', 'rtf', 'text', 'docx', 'doc')
     and a.download_status = 200
