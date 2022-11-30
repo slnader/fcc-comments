@@ -1,6 +1,8 @@
 ## Replication Code for "Do fake online comments pose a threat to regulatory policymaking?"
 
-The code in this repository replicates the analyses in the main body of "Do fake online comments pose a threat to regulatory policymaking?"
+The code in this repository replicates the analyses in the main body of
+"Do fake online comments pose a threat to regulatory policymaking?" *Policy & Internet*, [https://doi.org/10.1002/poi3.327](https://doi.org/10.1002/poi3.327).
+
 
 ## Requirements
 
@@ -20,3 +22,6 @@ conda env create --name fcc -f=environments/fcc_environment.yml
 `search_utils`: contains the software to execute bm25 with weighting.
 
 `tests`: unit tests for `search_utils`.
+
+## Data
+The data to replicate the analyses is available [here](https://huggingface.co/datasets/slnader/fcc-comments) in the `search.tar.gz` archive.
